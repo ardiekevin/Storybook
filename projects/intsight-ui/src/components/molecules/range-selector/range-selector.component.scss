@@ -1,0 +1,83 @@
+@import './../../../assets/styles/abstracts/variables';
+
+.control-section {
+    display: flex;
+    flex-direction: column;
+    color: $ta9-titles-color;
+
+    .range-wrapper {
+        display: flex;
+        font-size: 1.3rem;
+        width: 100%;
+
+        ejs-rangenavigator {
+            #rangeFilter_svg {
+                #rangeFilter_chart {
+                    #rangeFilter_Series_0 {
+                        fill: $ta9-titles-color;
+                    }
+                }
+            }
+        }
+
+        .min, .max {
+            width: 1.8rem;
+            display: flex;
+
+            span {
+                margin-top: 130%;
+            }
+        }
+
+        .min {
+            justify-content: end;
+        }
+
+        .max {
+            justify-content: start;
+        }
+
+        .range-block {
+            width: calc(100% - 3rem);
+        }
+
+        #rangeFilter_svg {
+            #rangeFilter_sliders {
+                #rangeFilter {
+                    &_LeftSlider, &_RightSlider {
+                        &_ThumpSymbol {
+                            stroke-width: 0.3rem;
+                            rx: 0.2rem;
+                            ry: 1rem;
+                        }
+
+                        &_ThumpGrip {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .range-results {
+        display: flex;
+        justify-content: space-between;
+        width: calc(100% - 5.5rem);
+        margin: 0 auto;
+        color: #707070;
+        font-size: 1.3rem;
+
+        &.double-range {
+            input {
+                text-align: center;
+            }
+        }
+
+        .start, .end {
+            border: 1px solid #DDD;
+            background-color: white;
+            padding: 0.35rem 2.5rem;
+        }
+    }
+}

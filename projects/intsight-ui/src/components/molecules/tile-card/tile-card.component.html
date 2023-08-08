@@ -1,0 +1,59 @@
+<ng-container *ngIf="hrefLink; else tilecardContentTpl">
+  <a class="href-link-tile-card" [routerLink]="hrefLink">
+    <ng-container [ngTemplateOutlet]="tilecardContentTpl"></ng-container>
+  </a>
+</ng-container>
+
+<ng-template #tilecardContentTpl>
+  <div class="thumbnail-favorite-btn-container">
+    <img
+      class="thumbnail-tile-card"
+      [src]="tile.thumbnailUrl"
+      width="45"
+      height="45"
+      alt="tile thumbnail"
+    />
+
+    <button
+      *ngIf="showBtnFavorite"
+      type="button"
+      class="btn-favorite-tile-card"
+      [class.favorite]="tile.isFavorite"
+      (click)="onFavoriteStatusChanged()"
+    >
+      <svg-icon
+        src="../assets/images/svg/icons/star.svg"
+        [class]="'ta9-icon'"></svg-icon>
+    </button>
+  </div>
+
+  <div class="body-tile-card">
+    <h5 class="title-tile-card">{{ tile.name }}</h5>
+    <p class="subtitle-tile-card">
+      <ng-container [ngSwitch]="tile.type">
+        <ng-container *ngSwitchCase="'datamodel'">
+          <svg-icon
+            src="../assets/images/svg/icons/data-model.svg"
+            [class]="'ta9-icon small'"
+          ></svg-icon>
+          Data Model
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'category'">
+          <svg-icon
+            src="../assets/images/svg/icons/folder-open.svg"
+            [class]="'ta9-icon small'"
+          ></svg-icon>
+          Category
+        </ng-container>
+      </ng-container>
+    </p>
+  </div>
+
+  <div class="ending-tile-card">
+    <svg-icon
+      src="../assets/images/svg/icons/arrow-right.svg"
+      [class]="'ta9-icon'"
+    ></svg-icon>
+  </div>
+</ng-template>

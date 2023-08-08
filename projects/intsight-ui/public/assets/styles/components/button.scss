@@ -1,0 +1,14 @@
+.ta9-button {
+  &:active {
+    background: $ta9-onhover-n-selected-state-color;
+    color: $ta9-light-color;
+
+    .ta9-icon {
+      svg {
+        path {
+          fill: $ta9-light-color;
+        }
+      }
+    }
+  }
+}

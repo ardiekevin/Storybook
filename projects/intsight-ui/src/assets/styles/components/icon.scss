@@ -1,0 +1,80 @@
+$ta9-icon-regular-size: 1.786rem; // 25px
+$ta9-icon-small-size: 1.071rem; // 15px
+$ta9-icon-xs-size: 0.75rem; // 12px
+
+.ta9-icon {
+  svg {
+    width: $ta9-icon-regular-size;
+    height: $ta9-icon-regular-size;
+
+    path {
+      fill: $ta9-default-state-color;
+    }
+  }
+
+  &.small {
+    svg {
+      width: $ta9-icon-small-size;
+      height: $ta9-icon-small-size;
+    }
+  }
+
+  &.xs {
+    svg {
+      width: $ta9-icon-xs-size;
+      height: $ta9-icon-xs-size;
+    }
+  }
+
+  &:hover svg path {
+    fill: $ta9-onhover-n-selected-state-color;
+  }
+
+  // some places a on-hover on icons is not required
+  &.no-onhover:hover svg path {
+    fill: $ta9-default-state-color;
+  }
+
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+
+    svg path {
+      fill: $ta9-disabled-state-color;
+    }
+  }
+}
+
+.ta9-icon-button {
+  display:  inline-flex;
+  margin: 0.75rem 0.656rem !important; // 12px 10.5px
+}
+
+.ta9-icon-button-small {
+  margin: 0.125rem 0.0313rem; // 12px 10.5px
+}
+
+.ta9-icon-button-confirm {
+  background: $ta9-success-color;
+  svg {
+    path {
+      fill:$ta9-light-color;
+    }
+  }
+  &:hover {
+    background: $ta9-success-color;
+    svg {
+      path {
+        fill:$ta9-light-color;
+      }
+    }
+  }
+  &:active {
+    background: $ta9-light-color;
+    svg {
+      path {
+        fill: $ta9-success-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+version: 2.1
+orbs:
+  docker: circleci/docker@2.2.0
+  browser-tools: circleci/browser-tools@1.4.0
+  ci: ta-9/ci-test@0
+
+
+workflows:
+  build-test:
+    unless:
+      equal: [ master, << pipeline.git.branch >> ]
+    jobs:
+      - ci/get-code
+      - ci/node-prepare:
+          requires:
+            - ci/get-code
+          context:
+            - AzureDevOps
+      - ci/node-npm-lint:
+          requires:
+            - ci/node-prepare
+      - ci/node-npm-test:
+          requires:
+            - ci/node-prepare
+      - ci/node-npm-build:
+          requires:
+          - ci/node-npm-test
+
+  build-release:
+    when:
+      equal: [ master, << pipeline.git.branch >> ]
+    jobs:
+      - ci/get-code
+      - ci/node-prepare:
+          requires:
+            - ci/get-code
+          context:
+            - AzureDevOps
+      - ci/node-npm-lint:
+          requires:
+            - ci/node-prepare
+      - ci/node-npm-test:
+          requires:
+            - ci/node-prepare
+      - ci/node-npm-build:
+          requires:
+            - ci/node-npm-test

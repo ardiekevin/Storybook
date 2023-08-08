@@ -1,0 +1,42 @@
+/******** TA9 DESIGN SYSTEM COLORS ********/
+
+// GENERAL
+$ta9-titles-color: #0e4f6e; // titles and tooltip background
+$ta9-success-color: #2bae6d;
+$ta9-danger-color: #f04444;
+$ta9-warning-color: #ff9c39;
+$ta9-info-color: #3e97fb;
+$ta9-favorite-color: #ffc950;
+$ta9-light-color: #fff;
+$ta9-dark-color: #000;
+$ta9-placeholder-color: #6f7070;
+$ta9-border-color: #ededed;
+$ta9-base-font-size: 12px;
+
+// STATES & MODES
+$ta9-onhover-n-selected-state-color: #3e97fb;
+$ta9-disabled-state-color: #ededed;
+$ta9-default-state-color: #6f7284;
+$ta9-text-muted-state-color: #868686;
+
+/***** TYPOGHRAPY *****/
+$ta9-font-family-base: 'Assistant', sans-serif !default;
+$ta9-font-size-base: 0.875rem !default;
+$ta9-font-weight-base: normal;
+$ta9-line-height-base: 1.125 !default;
+$ta9-letter-spacing-base: 0 !default;
+$ta9-spacing-base: 1rem !default;
+$ta9-heading-line-height: 1.2 !default;
+
+// HEADERS FONT SIZES
+$ta9-h1-font-size: $ta9-base-font-size * 3.2143 !default;
+$ta9-h2-font-size: $ta9-base-font-size * 2.5714 !default;
+$ta9-h3-font-size: $ta9-base-font-size * 2.2143 !default;
+$ta9-h4-font-size: $ta9-base-font-size * 1.8571 !default;
+$ta9-h5-font-size: $ta9-base-font-size * 1.5 !default;
+$ta9-h6-font-size: $ta9-base-font-size !default;
+
+// p(x) = p, <p> Paragraph
+$ta9-p1-font-size: $ta9-font-size-base * 1.5 !default;
+$ta9-p2-font-size: $ta9-font-size-base * 1.2857 !default;
+$ta9-p3-font-size: $ta9-font-size-base; // or simple not use it due it's the min fontsize ( 1rem)

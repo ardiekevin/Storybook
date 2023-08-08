@@ -1,0 +1,45 @@
+<div class="control-section">
+    <div class="range-wrapper">
+        <div class="min">
+            <span>{{ minValue }}</span>
+        </div>
+        <div class="range-block">
+            <ejs-rangenavigator id="rangeFilter"
+                                labelPosition="Outside"
+                                animationDuration=500
+                                [theme]="theme"
+                                [width]="width" 
+                                [enableRtl]="isRTL"
+                                [value]="minMax"
+                                [valueType]="dataType"
+                                [xName]="xName" 
+                                [yName]="yName" 
+                                [navigatorStyleSettings]="navigatorStyleSettings" 
+                                (changed)="rangeHandler($event)"
+                                (load)="rangeLoad($event)">
+                <e-rangenavigator-series-collection>
+                    <e-rangenavigator-series type="Area"
+                                             [width]="width" 
+                                             [dataSource]="data" 
+                                             [xName]="xName" 
+                                             [yName]="yName"
+                                             >
+                    </e-rangenavigator-series>
+                </e-rangenavigator-series-collection>
+            </ejs-rangenavigator>
+        </div>
+        <div class="max">
+            <span>{{ maxValue }}</span>
+        </div>
+    </div>
+    <div *ngIf="!isDate" class="range-results double-range">
+        <input class="start" type="text" [value]="startValue">
+        <span>-</span>
+        <input class="end" type="text" [value]="endValue">
+    </div>
+    <div *ngIf="isDate" class="range-results date-range">
+        <ejs-datepicker placeholder='From'></ejs-datepicker>
+        <span>-</span>
+        <ejs-datepicker placeholder='To'></ejs-datepicker>
+    </div>
+</div>

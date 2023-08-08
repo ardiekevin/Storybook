@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.022" height="17.443" viewBox="0 0 18.022 17.443">
+  <g id="Group_1989" data-name="Group 1989" transform="translate(-8 -9.718)">
+    <g id="Group_1988" data-name="Group 1988" transform="translate(8 9.718)">
+      <path id="Path_552" data-name="Path 552" d="M-3766.163,991.979l-3.084-2.91h0a.506.506,0,0,0-.345-.134h-9.252a.474.474,0,0,0-.487.459v11.638a.474.474,0,0,0,.487.459h12.337a.474.474,0,0,0,.487-.459V992.3A.447.447,0,0,0-3766.163,991.979Zm-9.11-2.125h5.194v2.718h-5.194Zm6.352,10.719h-7.51v-3.865h7.51Zm1.927,0h-.953v-4.325a.473.473,0,0,0-.487-.459h-8.484a.474.474,0,0,0-.487.459v4.325h-.952V989.854h2.111v3.177a.473.473,0,0,0,.487.459h6.168a.474.474,0,0,0,.487-.459V990.5l2.11,1.991Z" transform="translate(3779.331 -988.935)" fill="#6f7284"/>
+    </g>
+    <g id="Ellipse_366" data-name="Ellipse 366" transform="translate(15.022 16.162)" fill="#fff" stroke="#6f7284" stroke-width="1">
+      <circle cx="5.5" cy="5.5" r="5.5" stroke="none"/>
+      <circle cx="5.5" cy="5.5" r="5" fill="none"/>
+    </g>
+    <line id="Line_260" data-name="Line 260" y2="6" transform="translate(20.522 18.662)" fill="none" stroke="#6f7284" stroke-width="1"/>
+    <line id="Line_261" data-name="Line 261" x2="6" transform="translate(17.522 21.662)" fill="none" stroke="#6f7284" stroke-width="1"/>
+  </g>
+</svg>

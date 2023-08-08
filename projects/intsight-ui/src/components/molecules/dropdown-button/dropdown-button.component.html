@@ -1,0 +1,42 @@
+<div #dropdownContainer class="ta9-ltr" [ngClass]="{'ta9-rtl': pivotRight}">
+  <div class="ta9-container-inline ta9-ltr" [ngClass]="customClass" (click)="toggleDropdownContent()">
+    <ta9-icon-button [svgIcon]="svgIcon">
+    </ta9-icon-button>
+    <div *ngIf="showArrowIcon" class="arrow-icon-holder">
+      <ta9-icon-button *ngIf="!showHideContent; else chevronUp;" 
+        [svgIcon]="'../../../assets/images/svg/icons/chevron-down.svg'"
+        [ngClass]="'small no-onhover mt-15'"
+      ></ta9-icon-button>
+    </div>
+  </div>
+  
+  <div *ngIf="showHideContent" class="ta9-container-inline dropdown-content ta9-ltr">
+    <div class="dropdown-content-header-container">
+      <span class="dropdown-content-title">
+        <strong>{{listTitle}}</strong>
+      </span>
+      <div class="dropdown-content-header-divider"></div>
+    </div>
+    <ul class="ta9-dropdown-list">
+      <li class="no-bullet ta9-button" *ngFor="let item of listItems" (click)="itemClicked(item.text)">
+        <button class="list-button">
+          <ta9-icon-button 
+            [svgIcon]="item.icon"
+            [ngClass]="'xs no-onhover ta9-icon-button-small'"
+            [ngClass2]="'p-0'"
+          ></ta9-icon-button>
+          <span>{{item.text}}</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<ng-template #chevronUp>
+  <ta9-icon-button 
+    [svgIcon]="'../../../assets/images/svg/icons/chevron-up.svg'"
+    [ngClass]="'small no-onhover mt-15'"
+    [height]="15"
+    [width]="15"
+  ></ta9-icon-button>
+</ng-template>

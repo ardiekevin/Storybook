@@ -1,0 +1,36 @@
+{
+  "name": "@ta9/intsight-ui",
+  "description": "TA9 IntSight UI elements",
+  "version": "0.0.27",
+  "repository": "https://pkgs.dev.azure.com/ta-9/Argus/_packaging/ta9-npm/npm/registry/",
+  "license": "Private",
+  "scripts": {
+    "install-peer": "npm-install-peers"
+  },
+  "peerDependencies": {
+    "@angular/animations": "^12.2.17",
+    "@angular/cdk": "^12.2.13",
+    "@angular/common": "^12.2.17",
+    "@angular/compiler": "^12.2.17",
+    "@angular/core": "^12.2.17",
+    "@angular/forms": "^12.2.17",
+    "@angular/material": "^12.2.13",
+    "angular-svg-icon": "^12.0.0",
+    "@syncfusion/ej2-angular-buttons": "^19.4.55",
+    "@syncfusion/ej2-angular-calendars": "^19.4.56",
+    "@syncfusion/ej2-angular-charts": "^19.4.54",
+    "@syncfusion/ej2-angular-dropdowns": "^19.4.56",
+    "@syncfusion/ej2-angular-grids": "^19.4.56",
+    "@syncfusion/ej2-angular-lists": "^19.4.55"
+  },
+  "devDependencies": {
+    "@angular-eslint/schematics": "^12.7.0",
+    "@angular/cli": "^12.2.18",
+    "@angular/common": "^12.2.17",
+    "@angular/compiler": "^12.2.17",
+    "@angular/core": "^12.2.17",
+    "@angular/forms": "^12.2.17",
+    "@angular/material": "^12.2.13",
+    "npm-install-peers": "^1.2.2"
+  }
+}

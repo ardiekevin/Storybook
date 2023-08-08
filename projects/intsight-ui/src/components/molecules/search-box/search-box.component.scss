@@ -1,0 +1,23 @@
+@import '../../../assets/styles/main.scss';
+
+.ta9-search-input {
+  display: inline-flex;
+  border: none;
+  background-color: transparent;
+  // width: 100%;
+  color: $ta9-default-state-color;
+  font-size: 25px;
+  // margin: calc(10px - 2px) 0px;
+  padding: 0px 5px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.ta9-vertical-divider {
+  display: inline-flex;
+  height: inherit;
+  border-left: solid 1px $ta9-disabled-state-color;
+  border-right: solid 1px $ta9-disabled-state-color;
+}

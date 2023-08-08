@@ -1,0 +1,97 @@
+@import '../../../assets/styles/abstracts/variables';
+
+$border-width-top-bottom-tilecard: 0.0714rem;
+$padding-left-right-tilecard: 1.2143rem;
+$btn-favorite-size-tilecard: 1.786rem; // 25px
+
+:host {
+  display: flex;
+  flex-direction: row;
+  height: 5rem;
+  padding: 0 $padding-left-right-tilecard 0 $padding-left-right-tilecard;
+  align-items: center;
+  border-width: $border-width-top-bottom-tilecard 0
+    $border-width-top-bottom-tilecard 0;
+  border-style: solid;
+  border-color: $ta9-disabled-state-color;
+  cursor: pointer;
+  color: inherit;
+
+  .href-link-tile-card {
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+  }
+
+  .thumbnail-tile-card {
+    border-radius: 50%;
+    border: 0.071rem solid $ta9-border-color;
+  }
+
+  .thumbnail-favorite-btn-container {
+    position: relative;
+  }
+
+  .btn-favorite-tile-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 1.929rem;
+    top: 2rem;
+    width: $btn-favorite-size-tilecard;
+    height: $btn-favorite-size-tilecard;
+    background-color: white;
+    border: 1px solid $ta9-disabled-state-color;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: fill 0.15s;
+    padding: 0;
+
+    svg {
+      width: 0.857rem;
+      height: 0.786rem;
+    }
+    
+    &.favorite svg path {
+      fill: $ta9-favorite-color;
+    }
+  }
+
+  .body-tile-card {
+    margin-left: 1.2rem;
+  }
+
+  .title-tile-card,
+  .subtitle-tile-card {
+    margin-top: unset;
+  }
+
+  .title-tile-card {
+    margin-bottom: 0.871rem;
+    color: initial;
+  }
+
+  .subtitle-tile-card {
+    margin-bottom: unset;
+    color: $ta9-text-muted-state-color;
+
+    svg {
+      vertical-align: text-bottom;
+      margin-right: 0.7143rem;
+    }
+  }
+
+  .ending-tile-card {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+  }
+}
+
+:host:hover {
+  .title-tile-card {
+    color: $ta9-onhover-n-selected-state-color;
+  }
+}

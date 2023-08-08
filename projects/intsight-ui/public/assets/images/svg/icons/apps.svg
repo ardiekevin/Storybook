@@ -1,0 +1,22 @@
+<svg id="Apps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+  <g id="Group_11" data-name="Group 11">
+    <g id="Group_10" data-name="Group 10">
+      <path id="Path_16" data-name="Path 16" d="M10.556,0H.926A.929.929,0,0,0,0,.926v9.63a.929.929,0,0,0,.926.926h9.63a.929.929,0,0,0,.926-.926V.926A.929.929,0,0,0,10.556,0ZM9.63,9.63H1.852V1.852H9.63Z"/>
+    </g>
+  </g>
+  <g id="Group_13" data-name="Group 13" transform="translate(13.519)">
+    <g id="Group_12" data-name="Group 12">
+      <path id="Path_17" data-name="Path 17" d="M156.556,0h-9.63A.929.929,0,0,0,146,.926v9.63a.929.929,0,0,0,.926.926h9.63a.929.929,0,0,0,.926-.926V.926A.929.929,0,0,0,156.556,0Zm-.926,9.63h-7.778V1.852h7.778Z" transform="translate(-146)"/>
+    </g>
+  </g>
+  <g id="Group_15" data-name="Group 15" transform="translate(0 13.519)">
+    <g id="Group_14" data-name="Group 14">
+      <path id="Path_18" data-name="Path 18" d="M10.556,146H.926a.929.929,0,0,0-.926.926v9.63a.929.929,0,0,0,.926.926h9.63a.929.929,0,0,0,.926-.926v-9.63A.929.929,0,0,0,10.556,146Zm-.926,9.63H1.852v-7.778H9.63Z" transform="translate(0 -146)"/>
+    </g>
+  </g>
+  <g id="Group_17" data-name="Group 17" transform="translate(13.519 13.519)">
+    <g id="Group_16" data-name="Group 16">
+      <path id="Path_19" data-name="Path 19" d="M156.556,146h-9.63a.929.929,0,0,0-.926.926v9.63a.929.929,0,0,0,.926.926h9.63a.929.929,0,0,0,.926-.926v-9.63A.929.929,0,0,0,156.556,146Zm-.926,9.63h-7.778v-7.778h7.778Z" transform="translate(-146 -146)"/>
+    </g>
+  </g>
+</svg>

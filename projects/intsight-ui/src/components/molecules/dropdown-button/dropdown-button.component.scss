@@ -1,0 +1,85 @@
+@import "../../../../../../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../../../../../../node_modules/@syncfusion/ej2-angular-dropdowns/styles/material.css";
+@import '../../../assets/styles/main.scss';
+
+$ta9-list-item-hover: #F4F4F4;
+
+.dropdown-content {
+  min-width: 12.5rem;
+  position: absolute;
+  display: block;
+  margin-top: 0.6875rem; // 11px
+  background: $ta9-light-color;
+}
+
+.ta9-dropdown-list {
+  padding: 0;
+  margin: 0;
+
+  li {
+    // height: 3.125rem;
+    height: 2rem;
+    font-size: 1.125rem;
+    padding: 0rem 0.875rem;
+    span {
+      margin-right: 0.3125rem;
+      margin-left: 0.9375rem;
+      // line-height: 3.125rem;
+      line-height: 2rem;
+      font-size: 1.25rem;
+      cursor: default;
+    }
+    &:hover {
+      background: $ta9-list-item-hover;
+    }
+    &:active {
+      background: $ta9-onhover-n-selected-state-color;
+      color: $ta9-light-color;
+    }
+  }
+
+  .no-bullet {
+    list-style-type: none;
+  }
+}
+
+.dropdown-content-header-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0.3125rem;
+}
+
+.dropdown-content-title {
+  display: inline-block;
+  background: white;
+  padding-right: 0.3125rem;
+  color: #6F7284;
+  font-size: 0.875rem;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.dropdown-content-header-divider {
+  @extend .center-position;
+  width: 100%;
+  display: inline-block;
+  margin-top: 0.5rem;
+  border-top: 0.0625rem solid #0000001D;
+  height: 0.0625rem;
+  background: #0000001D;
+  z-index: 0;
+}
+
+.arrow-icon-holder {
+  width: 2.382rem;
+}
+
+.show {
+  display: block !important;
+}
+
+.list-button {
+  height: inherit;
+  background-color: transparent;
+  border: none;
+}

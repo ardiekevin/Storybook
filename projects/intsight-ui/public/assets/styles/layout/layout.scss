@@ -1,0 +1,39 @@
+$button-radius: 0.063rem; // 1px
+
+.ta9-container {
+  display: flex;
+  width: auto;
+  box-shadow: 0px 0px 6px #0000001D;
+  border-radius: $button-radius;
+  border: transparent;
+  margin: 0 0.469rem; // 7.5px
+}
+
+.ta9-container-inline {
+  display: inline-flex;
+  width: auto;
+  box-shadow: 0px 0px 6px #0000001D;
+  border-radius: $button-radius;
+  border: transparent;
+  margin: 0 0.469rem; // 7.5px
+}
+
+.ta9-ltr {
+  direction: ltr;
+}
+
+.ta9-rtl {
+  direction: rtl;
+}
+
+.center-position {
+  margin: 0 auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}

@@ -1,0 +1,14 @@
+<div class="ta9-container">
+  <ng-content></ng-content>
+  <div *ngIf="showIcon" class="ta9-vertical-divider"></div>
+  <input
+    class="ta9-search-input"
+    #searchInput
+    type="text"
+    [attr.placeholder]="placeholder"
+    (focus)="focusField()"
+    (blur)="focusField(false)"
+    (change)="triggerSearch($event)"
+    (keyup.enter)="submitSearch($event)">
+</div>
+

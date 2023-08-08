@@ -1,0 +1,47 @@
+@import '../../../assets/styles/main.scss';
+
+.ta9-toolbar {
+  padding: 10px 9.5px;
+}
+
+.ta9-toolbar-extra {
+  margin: 0 auto;
+  margin-left: 0;
+}
+
+.ta9-toolbar-group {
+  @extend .ta9-container;
+  border: none;
+  box-shadow: none;
+}
+
+.shrinked-toolbar {
+  display: none;
+  margin: 0;
+}
+
+.expanded-toolbar {
+  margin: 0;
+}
+
+@media (max-width: 1000px) {
+  .shrinked-toolbar {
+    display: inherit;
+  }
+  .expanded-toolbar {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .ta9-toolbar {
+    min-width: 1200px;
+  }
+
+  .shrinked-toolbar {
+    display: none;
+  }
+  .expanded-toolbar {
+    display: inherit;
+  }
+}
