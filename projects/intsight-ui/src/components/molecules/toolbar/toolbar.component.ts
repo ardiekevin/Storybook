@@ -67,6 +67,31 @@ export class ToolbarComponent implements OnInit {
     svgIcon: '../../../assets/images/svg/icons/layers.svg',
   }
 
+  _x32_0 = {
+    listTitle: 'paint',
+    svgIcon: '../../../assets/images/svg/icons/_x32_0.svg',
+  }
+
+  Group_2039 = {
+    listTitle: 'group',
+    svgIcon: '../../../assets/images/svg/icons/Group 2039svg',
+  }
+
+  sync = {
+    listTitle: 'syncronize',
+    svgIcon: '../../../assets/images/svg/icons/Group 2039svg',
+  }
+
+  clock1 = {
+    listTitle: 'time',
+    svgIcon: '../../../assets/images/svg/icons/Group 2039svg',
+  }
+
+  calendar = {
+    listTitle: 'date',
+    svgIcon: '../../../assets/images/svg/icons/Group 2039svg',
+  }
+
   constructor() {
     this.collapsedButtons = {
       category: 'More tools',
