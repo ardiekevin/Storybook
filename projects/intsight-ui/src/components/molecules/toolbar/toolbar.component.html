@@ -1,4 +1,4 @@
-<div class="ta9-container ta9-toolbar" [ngClass]="{'ta9-rtl': isRTL}">
+<div class="ta9-container ta9-toolbar">
   <ta9-icon-button [svgIcon]="'../../../assets/images/svg/icons/filter.svg'"></ta9-icon-button>
 
   <ta9-search-box 
@@ -19,20 +19,8 @@
     </div>
 
     <div class="ta9-toolbar-group expanded-toolbar">
-      <div class="ta9-container" [ngClass]="{'ta9-ltr': isRTL}" *ngFor="let buttons of collapsedButtons.buttons">
-        <div *ngFor="let item of buttons">
-          <ta9-icon-button [svgIcon]="item.icon"></ta9-icon-button>
-        </div>
-      </div>
     </div>
   </div>
-
-  <ta9-dropdown-button *ngFor="let dropdownButton of dropdownButtons" 
-    [svgIcon]="dropdownButton.svgIcon"
-    [listTitle]="dropdownButton.listTitle"
-    [listItems]="dropdownButton.listItems"
-  ></ta9-dropdown-button>
-  
 
   <div class="ta9-toolbar-group ta9-toolbar-extra">
     <ta9-search-box 
@@ -53,6 +41,7 @@
       [showArrowIcon]="false"
       [pivotRight]="!isRTL"
     ></ta9-dropdown-button>
-  </div>
+
   
+  </div>
 </div>
