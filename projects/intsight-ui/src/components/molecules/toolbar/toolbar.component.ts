@@ -57,6 +57,16 @@ export class ToolbarComponent implements OnInit {
     ]
   }
 
+  siren = {
+    listTitle: 'Warning',
+    svgIcon: 'projects\intsight-ui\public\assets\images\svg\icons\siren.svg',
+  }
+
+  layers = {
+    listTitle: 'layer',
+    svgIcon: '../../../assets/images/svg/icons/layers.svg',
+  }
+
   constructor() {
     this.collapsedButtons = {
       category: 'More tools',
@@ -81,6 +91,8 @@ export class ToolbarComponent implements OnInit {
       ]
     };
   }
+
+
 
   ngOnInit(): void {
     this.collapsedButtons.buttons.forEach(item => {
