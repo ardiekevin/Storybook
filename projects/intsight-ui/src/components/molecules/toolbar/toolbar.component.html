@@ -1,5 +1,58 @@
 <div class="ta9-container ta9-toolbar" [ngClass]="{'ta9-rtl': isRTL}">
   <ta9-icon-button [svgIcon]="'../../../assets/images/svg/icons/filter.svg'"></ta9-icon-button>
 
+  <ta9-search-box 
+    [iconPosition]="'prefix'"
+    [showIcon]="true"
+  >
+    <ta9-icon-button [svgIcon]="'../../../assets/images/svg/icons/plus-thick.svg'"></ta9-icon-button>
+  </ta9-search-box>
+
+  <div class="ta9-toolbar-group">
+
+    <div class="ta9-toolbar-group shrinked-toolbar">
+      <ta9-dropdown-button 
+        [svgIcon]="'../../../assets/images/svg/icons/kebab-menu.svg'"
+        [listTitle]="collapsedButtons.category"
+        [listItems]="listItems"
+      ></ta9-dropdown-button>
+    </div>
+
+    <div class="ta9-toolbar-group expanded-toolbar">
+      <div class="ta9-container" [ngClass]="{'ta9-ltr': isRTL}" *ngFor="let buttons of collapsedButtons.buttons">
+        <div *ngFor="let item of buttons">
+          <ta9-icon-button [svgIcon]="item.icon"></ta9-icon-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ta9-dropdown-button *ngFor="let dropdownButton of dropdownButtons" 
+    [svgIcon]="dropdownButton.svgIcon"
+    [listTitle]="dropdownButton.listTitle"
+    [listItems]="dropdownButton.listItems"
+  ></ta9-dropdown-button>
+  
+
+  <div class="ta9-toolbar-group ta9-toolbar-extra">
+    <ta9-search-box 
+      [iconPosition]="'prefix'"
+      [showIcon]="true"
+    >
+      <ta9-icon-button [svgIcon]="'../../../assets/images/svg/icons/search.svg'"></ta9-icon-button>
+    </ta9-search-box>
+
+    <div class="ta9-container">
+      <ta9-icon-button [svgIcon]="'../../../assets/images/svg/icons/pencil.svg'"></ta9-icon-button>
+    </div>
+
+    <ta9-dropdown-button [svgIcon]="saveTools.svgIcon"
+      [customClass]="'ta9-icon-button-confirm'"
+      [listTitle]="saveTools.listTitle"
+      [listItems]="saveTools.listItems"
+      [showArrowIcon]="false"
+      [pivotRight]="!isRTL"
+    ></ta9-dropdown-button>
+  </div>
   
 </div>
