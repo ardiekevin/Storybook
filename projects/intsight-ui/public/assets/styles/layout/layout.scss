@@ -11,13 +11,28 @@ $button-radius: 0.063rem; // 1px
 
 .ta9-container-inline {
   display: inline-flex;
-  width: auto;
-  box-shadow: 0px 0px 6px #0000001D;
+  width: 1852.41px;
+  height: 50px;
+  box-shadow: 0px 0px 6px hsla(0, 1%, 17%, 0.966);
   border-radius: $button-radius;
   border: transparent;
   margin: 0 0.469rem; // 7.5px
 }
 
+.find-text {
+  /* Layout Properties */
+  top: 209px;
+  left: 1500px;
+  width: 47px;
+  height: 21px;
+
+  /* UI Properties */
+  font: italic normal 100 var(--unnamed-font-size-18)/22px Helvetica Neue;
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--active);
+  text-align: left;
+  opacity: 1;
+}
 .ta9-ltr {
   direction: ltr;
 }

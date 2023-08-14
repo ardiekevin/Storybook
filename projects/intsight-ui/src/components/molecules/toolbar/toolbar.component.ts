@@ -48,9 +48,9 @@ export class ToolbarComponent implements OnInit {
     }
   ]
 
-  saveTools = {
+  Group_576 = {
     listTitle: 'Save Options',
-    svgIcon: '../../../assets/images/svg/icons/save.svg',
+    svgIcon: '../../../assets/images/svg/icons/Group_576.svg',
     listItems: [
       { text: 'Save', icon: '../../../assets/images/svg/icons/save.svg'},
       { text: 'Save As', icon: '../../../assets/images/svg/icons/save-as.svg'},
@@ -72,24 +72,33 @@ export class ToolbarComponent implements OnInit {
     svgIcon: '../../../assets/images/svg/icons/_x32_0.svg',
   }
 
-  Group_2039 = {
+  save = {
     listTitle: 'group',
-    svgIcon: '../../../assets/images/svg/icons/Group 2039svg',
+    svgIcon: '../../../assets/images/svg/icons/save.svg',
+    listItems: [
+      { text: 'Save', icon: '../../../assets/images/svg/icons/save.svg'},
+      { text: 'Save As', icon: '../../../assets/images/svg/icons/save-as.svg'},
+    ]
   }
 
   sync = {
     listTitle: 'syncronize',
-    svgIcon: '../../../assets/images/svg/icons/Group 2039svg',
+    svgIcon: '../../../assets/images/svg/icons/sync.svg',
   }
 
   clock1 = {
     listTitle: 'time',
-    svgIcon: '../../../assets/images/svg/icons/Group 2039svg',
+    svgIcon: '../../../assets/images/svg/icons/clock1.svg',
   }
 
   calendar = {
     listTitle: 'date',
-    svgIcon: '../../../assets/images/svg/icons/Group 2039svg',
+    svgIcon: '../../../assets/images/svg/icons/calendar.svg',
+  }
+
+  Subtraction_33 = {
+    listTitle: 'drop down',
+    svgIcon: '../../../assets/images/svg/icons/Subtraction_33.svg',
   }
 
   constructor() {
