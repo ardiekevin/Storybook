@@ -5,34 +5,19 @@ import { Component, ElementRef, EventEmitter, HostListener, Input, Output, ViewC
   templateUrl: './dropdown-button.component.html',
   styleUrls: ['./dropdown-button.component.scss'],
 })
+
+
 export class DropdownButtonComponent {
-  @ViewChild('dropdownContainer')
-  dropdownContainer!: ElementRef;
-  @Input() svgIcon = '';
-  @Input() listTitle = '';
-  @Input() listItems: { text: string; icon: string; }[] = [];
-  @Input() showArrowIcon = true;
-  @Output() itemClick = new EventEmitter<any>();
-  @Input() pivotRight = false;
-  @Input() customClass = '';
-  
-  showHideContent = false;
+  isDropdownOpen = false;
+  selectedOption = 'Last 30 Minutes'; // Initialize the property
 
-  constructor() {}
 
-  toggleDropdownContent() {
-    this.showHideContent = !this.showHideContent;
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
   }
 
-  itemClicked(data: any) {
-    this.itemClick.emit(data);
-  }
-
-  @HostListener('document:click', ['$event.target'])
-  onClickOutside(targetElement: any) {
-    const clickedInside = this.dropdownContainer.nativeElement.contains(targetElement);
-    if (!clickedInside) {
-      this.showHideContent = false;
-    }
+  selectOption(option: string) {
+    this.selectedOption = option;
+    this.isDropdownOpen = false; // Close the dropdown after selection
   }
 }
