@@ -1,47 +1,255 @@
-@import '../../../assets/styles/main.scss';
+$toolbar-width: 95%;
+$toolbar-height: 50px;
 
 .ta9-toolbar {
-  padding: 10px 9.5px;
-}
+  position: absolute;
+  width: $toolbar-width;
+  height: $toolbar-height;
+  background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; 
+  box-shadow: 0px 3px 6px #00000012; 
+  opacity: 1; 
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  justify-content: space-between;
+  z-index: 1000;
 
-.ta9-toolbar-extra {
-  margin: 0 auto;
-  margin-left: 0;
-}
-
-.ta9-toolbar-group {
-  @extend .ta9-container;
-  border: none;
-  box-shadow: none;
-}
-
-.shrinked-toolbar {
-  display: none;
-  margin: 0;
-}
-
-.expanded-toolbar {
-  margin: 0;
-}
-
-@media (max-width: 1000px) {
-  .shrinked-toolbar {
-    display: inherit;
-  }
-  .expanded-toolbar {
-    display: none;
-  }
-}
-
-@media (min-width: 1000px) {
-  .ta9-toolbar {
-    min-width: 1200px;
+  .ta9-container.dropdown-container:hover .dropdown-list {
+    display: block;
   }
 
-  .shrinked-toolbar {
-    display: none;
+  .ta9-container { 
+    width: 38px;
+    height: 38px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 6px #0000001D; 
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    opacity: 1;
+    margin-right: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+
+    &:hover {
+      opacity: 1; 
+      background-color: rgb(0, 171, 238);
+    }
+
+    &.dropdown-container {
+      &:hover::before {
+        content: none; 
+      }
+      &:hover {
+        opacity: 1; 
+        background-color: rgb(255, 255, 255);
+      }
+    }
   }
-  .expanded-toolbar {
-    display: inherit;
+
+  .tooltip {
+    visibility: hidden;
+    background-color: #004e49;
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    width: auto; 
+    white-space: nowrap; 
+  }
+  
+
+  .tooltip::before {
+    content: '';
+    position: absolute;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #004e49 transparent;
+    bottom: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .ta9-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .tooltip-trigger:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .ta9-container:hover img:not([src*="assets/images/svg/icons/calendar.svg"]):not([src*="assets/images/svg/icons/chevron-down.svg"]) {
+    filter: brightness(0) saturate(100%) invert(1);
+  }
+
+  .ta9-container-filter {
+    width: 38px;
+    height: 38px;
+    border-radius: 3px;
+    opacity: 1; 
+    margin-right: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1;
+    position: relative;
+    
+    &:hover {
+      opacity: 1; 
+    }
+  }
+
+  .ta9-container-save {
+    width: 38px;
+    height: 38px;
+    background: #EAEAEA 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 6px #0000001D; 
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    opacity: 1; 
+    margin-right: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+   
+    &:hover {
+      background-color: rgb(3, 168, 3);
+    }
+  }
+
+  .ta9-find-container {
+    width: 280px;
+    height: 38px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box; 
+    box-shadow: 0px 0px 6px #0000001C; 
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    opacity: 1; 
+    margin-right: 10px; 
+    display: flex;
+    align-items: center;
+    color: #6F7284;
+    font: italic normal 100 18px/22px Helvetica Neue;
+    
+    .separator {
+      width: 1px;
+      height: 28px; 
+      background-color: #ccc; 
+      margin: 0 10px; 
+    }
+
+    .find-text {
+      color: #999;
+      outline: none;
+      border: none;
+      padding: 0;
+      margin: 0; 
+      display: inline-block; 
+      min-width: 100px; 
+      white-space: nowrap; 
+    }
+  }
+
+  .dropdown-container {
+    width: 280px;
+    height: 38px;
+    margin-left: 5px;
+    background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 6px #0000001D;
+    border: 1px solid #E5E5E5;
+    opacity: 1;
+
+    .dropdown-button {
+      width: 280px;
+      height: 38px;
+      padding: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font: normal 18px/23px Assistant;
+    }
+    
+    .dropdown-icon {
+      width: 20px; 
+      height: 20px;
+      fill: #333; 
+    }
+    
+    .calendar-icon {
+      width: 20px; 
+      height: 20px;
+      fill: #333; 
+    }
+    
+    .dropdown-list {
+      position: absolute;
+      top: calc(100% + 10px); 
+      width: 280px;
+      height: 221px;
+      background-color: transparent;
+      box-shadow: 0px 0px 6px #0000001D;
+      border: 1px solid #E5E5E5;
+      opacity: 1;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: none; 
+      text-align: left;
+      font: normal 18px/23px "Calibri Light", sans-serif;
+      color: #000000;
+    }
+    
+    .dropdown-item {
+      padding: 7px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .dropdown-item:hover {
+      background-color: #f0f0f0;
+    }
+    
+    .selected-option {
+      display: inline-block; 
+      text-align: left;
+      text-indent: 5px;
+      width: 100%; 
+      font: normal 18px/23px "Calibri Light", sans-serif;
+    }  
+  
+  }
+
+  .right-side-group {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+  }
+
+  .left-side-group {
+    display: flex;
+    align-items: center;
+    margin-right: auto; 
+  }
+
+  .disabled {
+    pointer-events: none;
+    opacity: 0.5; 
+  }
+
+  .icon-with-margin {
+    margin-left: 10px; 
   }
 }
