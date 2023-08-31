@@ -1,58 +1,73 @@
-<div class="ta9-container ta9-toolbar" [ngClass]="{'ta9-rtl': isRTL}">
-  <ta9-icon-button [svgIcon]="'../../../assets/images/svg/icons/filter.svg'"></ta9-icon-button>
-
-  <ta9-search-box 
-    [iconPosition]="'prefix'"
-    [showIcon]="true"
-  >
-    <ta9-icon-button [svgIcon]="'../../../assets/images/svg/icons/plus-thick.svg'"></ta9-icon-button>
-  </ta9-search-box>
-
-  <div class="ta9-toolbar-group">
-
-    <div class="ta9-toolbar-group shrinked-toolbar">
-      <ta9-dropdown-button 
-        [svgIcon]="'../../../assets/images/svg/icons/kebab-menu.svg'"
-        [listTitle]="collapsedButtons.category"
-        [listItems]="listItems"
-      ></ta9-dropdown-button>
+<div class="ta9-toolbar">
+  <div class="left-side-group">
+    <div class="ta9-container-filter">
+    <div class="tooltip-trigger">
+      <img src="assets/images/svg/icons/filter.svg" alt="Icon"/>
+      <span class="tooltip">Facets</span>
     </div>
+   </div>
 
-    <div class="ta9-toolbar-group expanded-toolbar">
-      <div class="ta9-container" [ngClass]="{'ta9-ltr': isRTL}" *ngFor="let buttons of collapsedButtons.buttons">
-        <div *ngFor="let item of buttons">
-          <ta9-icon-button [svgIcon]="item.icon"></ta9-icon-button>
+    <div class="ta9-container dropdown-container">
+      <div class="dropdown-button" (click)="toggleDropdown()">
+        <div class="calendar-icon">
+        <img src="assets/images/svg/icons/calendar.svg" alt="Icon"/>
         </div>
+      
+          <span class="selected-option">{{ selectedOption }}</span>
+  
+        <div class="dropdown-icon">
+          <img src="assets/images/svg/icons/chevron-down.svg" alt="Icon"/>
+        </div>
+      </div>
+  
+      <ul class="dropdown-list" [style.display]="isDropdownOpen ? 'block' : 'none'">
+        <li class="dropdown-item" (click)="selectOption('Last 30 Minutes')">Last 30 Minutes</li>
+        <li class="dropdown-item" (click)="selectOption('Last Hour')">Last Hour</li>
+        <li class="dropdown-item" (click)="selectOption('Last 4 Hours')">Last 4 Hours</li>
+        <li class="dropdown-item" (click)="selectOption('Last 24 Hours')">Last 24 Hours</li>
+        <li class="dropdown-item" (click)="selectOption('Last 72 Hours')">Last 72 Hours</li>
+        <li class="dropdown-item" (click)="selectOption('Custom')">Custom</li>
+      </ul>
+    </div>
+  
+    <div class="ta9-container">
+      <img src="assets/images/svg/icons/clock.svg" alt="Icon"/>
+      <span class="tooltip">Timeline</span>
+    </div>
+    <div class="ta9-container">
+      <img src="assets/images/svg/icons/sync.svg" alt="Icon"/>
+      <span class="tooltip">Refresh</span>
+    </div>
+    <div class="ta9-container">
+      <img src="assets/images/svg/icons/file-export.svg" alt="Icon"/>
+      <span class="tooltip">Export</span>
+    </div>
+  
+    <div class="ta9-container disabled">
+      <img src="assets/images/svg/icons/paint.svg" alt="Icon"/>
+      <span class="tooltip">Drawing tools</span>
+    </div>
+  </div>
+
+  <div class="right-side-group">
+    <div class="ta9-find-container">
+      <img src="assets/images/svg/icons/search.svg" alt="Icon-search" class="icon-with-margin"/>
+      <div class="separator"></div>
+      <span id="findText" class="find-text" contenteditable="true">{{ findText }}</span>
+    </div>        
+    <div class="ta9-container">
+      <img src="assets/images/svg/icons/siren.svg" alt="Icon"/>
+      <span class="tooltip">BFT</span>
+    </div>
+    <div class="ta9-container">
+      <img src="assets/images/svg/icons/layers.svg" alt="Icon"/>
+      <span class="tooltip">Layers</span>
+    </div>
+    <div class="ta9-container-save">
+      <div class="tooltip-trigger">
+        <img src="assets/images/svg/icons/save.svg" alt="Icon"/>
+        <span class="tooltip">Save</span>
       </div>
     </div>
   </div>
-
-  <ta9-dropdown-button *ngFor="let dropdownButton of dropdownButtons" 
-    [svgIcon]="dropdownButton.svgIcon"
-    [listTitle]="dropdownButton.listTitle"
-    [listItems]="dropdownButton.listItems"
-  ></ta9-dropdown-button>
-  
-
-  <div class="ta9-toolbar-group ta9-toolbar-extra">
-    <ta9-search-box 
-      [iconPosition]="'prefix'"
-      [showIcon]="true"
-    >
-      <ta9-icon-button [svgIcon]="'../../../assets/images/svg/icons/search.svg'"></ta9-icon-button>
-    </ta9-search-box>
-
-    <div class="ta9-container">
-      <ta9-icon-button [svgIcon]="'../../../assets/images/svg/icons/pencil.svg'"></ta9-icon-button>
-    </div>
-
-    <ta9-dropdown-button [svgIcon]="saveTools.svgIcon"
-      [customClass]="'ta9-icon-button-confirm'"
-      [listTitle]="saveTools.listTitle"
-      [listItems]="saveTools.listItems"
-      [showArrowIcon]="false"
-      [pivotRight]="!isRTL"
-    ></ta9-dropdown-button>
-  </div>
-  
 </div>
