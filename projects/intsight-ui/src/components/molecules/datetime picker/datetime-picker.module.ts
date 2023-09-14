@@ -1,14 +1,20 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { DatePipe } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+
 import { DatetimePickerComponent } from './datetime-picker.component';
 
 @NgModule({
   declarations: [DatetimePickerComponent],
-  imports: [BrowserModule, BsDatepickerModule.forRoot(), FormsModule],
-  exports: [DatetimePickerComponent],
-  providers: [DatePipe],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  bootstrap: [DatetimePickerComponent],
+  schemas: []
 })
-export class DatetimePickerModule {}
+export class DatetimePickerModule { }
