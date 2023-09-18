@@ -31,4 +31,3 @@ const Template = (args: DatetimePickerComponent) => ({
 });
 
 export const Basic = Template.bind({});
-
