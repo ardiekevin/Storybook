@@ -1,11 +1,7 @@
-<input type="date"
-       id="datePicker"
-       name="datePicker"
-       [(ngModel)]="selectedDate"
-       (ngModelChange)="onDateChange()"
-       [ngClass]="{'error': dateForm.get('selectedDate').hasError('dateRangeError')}"
-       placeholder="dd.mm.yyyy">
-
-<div *ngIf="dateForm.get('selectedDate').hasError('dateRangeError')" class="error-message">
-  Invalid date range. Please select a date between 01.01.2023 and 31.12.2023.
-</div>
+<input
+  type="text"
+  id="datepicker"
+  placeholder="dd.mm.yyyy"
+  [value]="formatDate(selectedDate)"
+  (input)="onInputChange($event)"
+>
