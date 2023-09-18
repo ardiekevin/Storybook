@@ -1,40 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-datetime-picker',
   templateUrl: './datetime-picker.component.html',
   styleUrls: ['./datetime-picker.component.scss']
 })
-export class DatetimePickerComponent implements OnInit {
-  selectedDate: string = '';
-  formattedDate: string = '';
-  dateForm!: FormGroup;
+export class DatetimePickerComponent {
+  selectedDate: Date | null = null;
 
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit() {
-    this.dateForm = this.fb.group({
-      selectedDate: ['', [Validators.required, this.dateRangeValidator]]
-    });
+  formatDate(date: Date | null): string {
+    if (!date) return '';
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
   }
 
-  dateRangeValidator(control: FormGroup) {
-    const selectedDate = new Date(control.value);
+  onInputChange(event: Event) {
+    const inputValue = (event.target as HTMLInputElement).value;
+    const [day, month, year] = inputValue.split('.').map(Number);
 
-    const minDate = new Date('2023-01-01');
-    const maxDate = new Date('2023-12-31');
-
-    return selectedDate >= minDate && selectedDate <= maxDate
-      ? null
-      : { dateRangeError: true };
-  }
-
-  onDateChange() {
-    const dateObj = new Date(this.selectedDate);
-    const day = dateObj.getDate().toString().padStart(2, '0');
-    const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
-    const year = dateObj.getFullYear();
-    this.formattedDate = `${day}.${month}.${year}`;
+    if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+      this.selectedDate = new Date(year, month - 1, day); 
+    } else {
+      this.selectedDate = null;
+    }
   }
 }
