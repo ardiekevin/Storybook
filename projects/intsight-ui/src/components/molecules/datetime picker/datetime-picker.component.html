@@ -1,7 +1,7 @@
-<input
-  type="text"
-  id="datepicker"
-  placeholder="dd.mm.yyyy"
-  [value]="formatDate(selectedDate)"
-  (input)="onInputChange($event)"
->
+<div class="input-group">
+    <input type="datetime" class="form-control" bsDatepicker bsConfig="datePickerConfig" placeholder="dd.mm.yyyy">
+    <div class="input-group-append">
+      <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+    </div>
+  </div>
+  
