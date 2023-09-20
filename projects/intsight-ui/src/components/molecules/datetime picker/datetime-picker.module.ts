@@ -1,7 +1,10 @@
 import { DatetimePickerComponent } from './datetime-picker.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { DatepickerModule } from 'ng2-datepicker';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 
 
 @NgModule({
@@ -10,7 +13,9 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    DatepickerModule,
+    BsDatepickerModule.forRoot(),
+    BsDatepickerConfig
   ],
   bootstrap: [DatetimePickerComponent],
 })
