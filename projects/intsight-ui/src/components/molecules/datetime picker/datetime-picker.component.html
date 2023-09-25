@@ -1,38 +1,16 @@
-<div class="dropdown-container">
-  <div class="dropdown-button" (click)="toggleDropdown()">
-    <div class="calendar-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="21.409" height="20" viewBox="0 0 21.409 20">
-        <g id="calendar_1_" data-name="calendar (1)" transform="translate(-1 -2)">
-          <path id="Path_1630" data-name="Path 1630" d="M20.075,2h-2V4A.667.667,0,0,1,16.74,4V2H6.069V4A.667.667,0,0,1,4.735,4V2h-2A1.836,1.836,0,0,0,1,4V6.4H22.343V4a2.25,2.25,0,0,0-2.268-2ZM1,7.8V20a1.809,1.809,0,0,0,1.8,2H20.142a2.25,2.25,0,0,0,2.268-2V7.8ZM6.936,19h-1.6a.526.526,0,0,1-.534-.533V16.8a.526.526,0,0,1,.534-.533H7a.526.526,0,0,1,.534.533v1.667A.584.584,0,0,1,6.936,19Zm0-6h-1.6a.526.526,0,0,1-.534-.533V10.8a.526.526,0,0,1,.534-.533H7a.526.526,0,0,1,.534.533v1.667A.584.584,0,0,1,6.936,13Zm5.336,6H10.6a.526.526,0,0,1-.534-.533V16.8a.526.526,0,0,1,.534-.533h1.667a.526.526,0,0,1,.534.533v1.667A.491.491,0,0,1,12.272,19Zm0-6H10.6a.526.526,0,0,1-.534-.533V10.8a.526.526,0,0,1,.534-.533h1.667a.526.526,0,0,1,.534.533v1.667A.491.491,0,0,1,12.272,13Zm5.336,6H15.94a.526.526,0,0,1-.534-.533V16.8a.526.526,0,0,1,.534-.533h1.667a.526.526,0,0,1,.534.533v1.667A.491.491,0,0,1,17.607,19Zm0-6H15.94a.526.526,0,0,1-.534-.533V10.8a.526.526,0,0,1,.534-.533h1.667a.526.526,0,0,1,.534.533v1.667A.491.491,0,0,1,17.607,13Z" transform="translate(0 0)" fill="#6f7284"/>
-        </g>
-      </svg>
-    </div>
-    
-    <span class="selected-option">{{ selectedOption }}</span>
-
-    <div class="dropdown-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="13.348" height="6.999" viewBox="0 0 13.348 6.999">
-        <g id="Subtraction_19" data-name="Subtraction 19" fill="#6f7284">
-          <path d="M 6.673522472381592 6.274747848510742 L 1.16757595539093 0.5 L 2.169376611709595 0.5 L 6.311600208282471 4.845009803771973 L 6.673480033874512 5.224599838256836 L 7.035370349884033 4.845029830932617 L 11.17817306518555 0.5 L 12.18021678924561 0.5 L 6.673522472381592 6.274747848510742 Z" stroke="none"/>
-          <path d="M 6.673500061035156 6.999300003051758 L 6.67278003692627 6.998539924621582 L 1.953124950659912e-07 1.525878534636149e-09 L 2.383520126342773 1.525878534636149e-09 L 6.673500061035156 4.5 L 10.96405982971191 1.525878534636149e-09 L 13.347900390625 1.525878534636149e-09 L 6.673500061035156 6.999300003051758 Z" stroke="none" fill="#6f7284"/>
-        </g>
-      </svg>
-    </div>
-  </div>
-
-  <input
-  *ngIf="isDropdownOpen"
-  type="text"
-  class="form-control"
-  placeholder="dd.mm.yyyy"
-  bsDatepicker
-  [bsConfig]="bsConfig"
-  [(ngModel)]="selectedDate"
-  (ngModelChange)="onDateSelect($event)"
-/>
-
-  <ul class="dropdown-list" [style.display]="isDropdownOpen ? 'block' : 'none'">
-
-  </ul>
+<div class="date-selector">
+  <label for="daySelect">.</label>
+  <select id="daySelect" (ngModel)="selectedDay" (change)="updateDate()">
+    <option *ngFor="let day of days" [value]="day">{{ day }}</option>
+  </select>
   
+  <label for="monthSelect">.</label>
+  <select id="monthSelect" (ngModel)="selectedMonth" (change)="updateDate()">
+    <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+  </select>
+  
+  <label for="yearSelect">.</label>
+  <select id="yearSelect" (ngModel)="selectedYear" (change)="updateDate()">
+    <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+  </select>
 </div>
